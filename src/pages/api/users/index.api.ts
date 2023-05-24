@@ -3,8 +3,8 @@ import { setCookie } from 'nookies'
 import { prisma } from '../../../lib/prisma'
 
 export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse,
+  req: NextApiRequest, //requisicao
+  res: NextApiResponse, //modifica
 ) {
   if (req.method !== 'POST') {
     return res.status(405).end()
