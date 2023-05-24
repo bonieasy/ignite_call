@@ -5,7 +5,7 @@ import { ArrowRight, Check } from 'phosphor-react'
 import { Container, Header } from '../styles'
 import { AuthError, ConnectBox, ConnectItem } from './styles'
 
-export default function Register() {
+export default function ConnectCalendar() {
 
     const session = useSession()
     const router = useRouter()
@@ -17,6 +17,8 @@ export default function Register() {
     async function handleConnectCalendar() {
         await signIn('google')
     }
+
+    console.log(session)
 
   return (
     <Container>

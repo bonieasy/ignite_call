@@ -23,6 +23,7 @@ export function buildNextAuthOptions(
               'https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/calendar',
           },
         },
+        //metodo para ter acesso ao perfil, google retorna para nos
         profile(profile: GoogleProfile) {
           return {
             id: profile.sub,
@@ -35,6 +36,7 @@ export function buildNextAuthOptions(
       }),
     ],
     callbacks: {
+      //funcao que dispara quando user autentica o acesso
       async signIn({ user, account, profile, email, credentials }) {
         if (
           !account?.scope?.includes('https://www.googleapis.com/auth/calendar')
@@ -49,7 +51,7 @@ export function buildNextAuthOptions(
       },
       async session({ session, user, token }) {
         return {
-          ...session,
+          ...session, //para pegar tudo dentro do session
           user,
         }
       },
