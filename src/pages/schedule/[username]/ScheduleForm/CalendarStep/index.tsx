@@ -2,7 +2,7 @@ import { api } from '@/lib/axios'
 import { useQuery } from '@tanstack/react-query'
 import dayjs from 'dayjs'
 import { useRouter } from 'next/router'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { Calendar } from '../../../../../components/Calendar'
 import { Container, TimePicker, TimePickerHeader, TimePickerItem, TimePickerList } from './styles'
 
@@ -13,7 +13,6 @@ interface Availability {
 
 export function CalendarStep() {
   const [selectedDate, setSelectedDate] = useState<Date | null>(null)
-  //const [availability, setAvailability] = useState<Availability | null>(null)
   const router = useRouter()
 
     const isDateSelected = !!selectedDate
